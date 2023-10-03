@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId = "com.example.upangeats"
         minSdk = 29
-        targetSdk = 33
+        targetSdk = 32
         versionCode = 1
         versionName = "1.0"
 
@@ -49,6 +49,14 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    //RecyclerView
+    implementation("androidx.recyclerview:recyclerview:1.3.1")
+
+    // For control over item selection of both touch and mouse driven selection.
+    // Provides additional functionalities for handling item selection and multi-selection in a RecyclerView.
+    // Implement features like selecting multiple items in a list, such as for actions like deletion, sharing, etc.
+    implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
 
     // Kotlin
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.3")
