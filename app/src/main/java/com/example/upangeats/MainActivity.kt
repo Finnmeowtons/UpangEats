@@ -3,6 +3,7 @@ package com.example.upangeats
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import com.example.upangeats.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,5 +19,6 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.mainNavHost)
         return navController.navigateUp()
         //dsadasdasd
+
     }
 }
