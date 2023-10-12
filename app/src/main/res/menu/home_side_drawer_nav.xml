@@ -5,33 +5,26 @@
 
     <item
         android:id="@+id/main_item"
-        android:title="">
+        android:icon="@drawable/account_circle_filled"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/rotation_item"
+        android:title="History">
+
         <menu>
-            <item
-                android:id="@+id/search_item"
-                android:icon="@drawable/account_circle_filled"
-                android:title="Profile" />
-            <item
-                android:id="@+id/rotation_item"
-                android:title="History" />
             <item
                 android:id="@+id/accelerator_item"
                 android:title="Settings" />
             <item
                 android:id="@+id/dashboard_item"
                 android:title="Cloche" />
-        </menu>
-    </item>
-    <item
-        android:id="@+id/labels_item"
-        android:title="Neil">
-        <menu>
+
             <item
-                android:id="@+id/label_one"
-                android:title="poop" />
-            <item
-                android:id="@+id/label_two"
-                android:title="AawdS" />
+                android:id="@+id/labels_item"
+                android:title="Neil" />
+
+
         </menu>
     </item>
 </menu>
