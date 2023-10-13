@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_host"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/favoritesFragment">
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.upangeats.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.upangeats.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
 </navigation>
