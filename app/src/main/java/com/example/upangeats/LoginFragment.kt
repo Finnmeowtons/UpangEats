@@ -19,7 +19,7 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         //Move to another fragment by clicking a button
-
+       
 
         return binding.root
     }
