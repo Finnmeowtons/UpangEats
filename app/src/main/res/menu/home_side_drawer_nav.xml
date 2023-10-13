@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/main_item"
+        android:icon="@drawable/account_circle_filled"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/rotation_item"
+        android:title="History">
+
+        <menu>
+            <item
+                android:id="@+id/accelerator_item"
+                android:title="Settings" />
+            <item
+                android:id="@+id/dashboard_item"
+                android:title="Cloche" />
+
+            <item
+                android:id="@+id/labels_item"
+                android:title="Neil" />
+
+
+        </menu>
+    </item>
+</menu>

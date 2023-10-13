@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottomNavHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:icon="@drawable/home_selector"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/bottomNavTray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:icon="@drawable/tray_selector"
+        android:title="Tray" />
+
+    <item
+        android:id="@+id/bottomNavFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:icon="@drawable/chats_selector"
+        android:title="Favorites" />
+
+    <item
+        android:id="@+id/bottomNavStalls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:icon="@drawable/stalls_selector"
+        android:title="Stalls" />
+</menu>
