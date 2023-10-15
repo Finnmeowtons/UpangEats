@@ -6,28 +6,6 @@
     android:layout_height="match_parent"
     android:background="#f3fadc">
 
-    <TextView
-        android:id="@+id/categories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/logo"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="60dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Categories"
-        android:textColor="#32620e"
-        android:textSize="20sp" />
-
-    <ImageButton
-        android:id="@+id/burger"
-        android:layout_width="51dp"
-        android:layout_height="59dp"
-        android:layout_below="@+id/categories"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="8dp"
-        android:background="@null"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/burger" />
 
     <ImageButton
         android:id="@+id/menu"
@@ -65,14 +43,113 @@
         android:layout_marginTop="70dp"
         android:background="@color/white" />
 
+    <TextView
+        android:id="@+id/categories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Categories"
+        android:textColor="#32620e"
+        android:textSize="20sp" />
+
     <ImageButton
-        android:id="@+id/noodles"
-        android:layout_width="51dp"
-        android:layout_height="59dp"
+        android:id="@+id/search"
+        android:layout_width="18dp"
+        android:layout_height="17.5dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="71.5dp"
+        android:scaleType="fitCenter"
         android:background="@null"
-        android:scaleType="centerCrop"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="150dp"
-        app:srcCompat="@drawable/noodles_png_image" />
+        app:srcCompat="@drawable/loupe" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/burger"
+            android:layout_width="51dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="155dp"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/burger" />
+
+        <ImageButton
+            android:id="@+id/noodles"
+            android:layout_width="51dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="155dp"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/noodles_png_image_sqaure" />
+
+        <ImageButton
+            android:id="@+id/bokojos"
+            android:layout_width="51dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="155dp"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/bokojos" />
+
+        <ImageButton
+            android:id="@+id/prays"
+            android:layout_width="51dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="155dp"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/prays"
+            android:paddingBottom="10dp" />
+
+        <ImageButton
+            android:id="@+id/turon"
+            android:layout_width="51dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="155dp"
+            android:layout_marginBottom="0dp"
+            android:background="@null"
+            android:paddingTop="5dp"
+            android:paddingBottom="8dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/turon" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="180dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Stalls"
+        android:textColor="#32620e"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="380dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Breakfast Meals"
+        android:textColor="#32620e"
+        android:textSize="20sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
 </RelativeLayout>
