@@ -19,11 +19,11 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         //Move to another fragment by clicking a button
        
-        binding.buttonRegister.setOnClickListener {
+        binding.tvSignUpHere.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
 
-        binding.buttonForgotPassword.setOnClickListener {
+        binding.tvForgotPassword.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
         }
 

@@ -1,6 +1,4 @@
-<!DOCTYPE resources [
-<!ENTITY at "@">
-]>
+<!DOCTYPE resources [<!ENTITY at "@">]>
 <resources>
     <string name="app_name">UPANG EATS</string>
     <!-- TODO: Remove or change this placeholder text -->
