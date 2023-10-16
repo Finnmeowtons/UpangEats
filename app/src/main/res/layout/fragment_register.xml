@@ -7,47 +7,17 @@
     android:background="#EFF4DE"
     tools:context=".RegisterFragment">
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageButton
-        android:id="@+id/ImgBtnRegisterBack"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
+        android:id="@+id/imgbtnBackSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:background="@null"
         android:src="@drawable/baseline_arrow_back_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="#32620E" />
-
-    <ImageView
-        android:id="@+id/imageViewPersonRegister"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginBottom="-20dp"
-        android:src="@drawable/baseline_person_outline_24"
-        app:layout_constraintBottom_toTopOf="@+id/cvRegisterParent"
-        app:layout_constraintStart_toEndOf="@+id/view"
         app:tint="@color/md_theme_light_tertiary" />
 
-    <TextView
-        android:id="@+id/tvSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:text="@string/sign_up"
-        android:textColor="@color/md_theme_light_tertiary"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cvRegisterParent"
-        app:layout_constraintEnd_toStartOf="@+id/view" />
 
 
     <androidx.cardview.widget.CardView
@@ -88,15 +58,20 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="20dp"
-
-                        android:hint="@string/email">
+                        android:hint="@string/email"
+                        app:endIconMode="clear_text"
+                        app:endIconTint="#77000000"
+                        app:suffixText="@string/at_phinmaed_dot_com">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etEmailSignUp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._-1234567890"
                             android:inputType="textEmailAddress"
-                            android:textSize="12sp" />
+                            android:maxLines="1"
+                            android:maxLength="64"
+                            android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,50 +81,90 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="20dp"
-                        android:hint="@string/full_name">
+                        android:hint="@string/full_name"
+                        app:endIconMode="clear_text"
+                        app:endIconTint="#77000000">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etFullNameSignUp"
                             android:layout_width="match_parent"
+                            android:scrollHorizontally="true"
+                            android:ellipsize="end"
+                            android:maxLines="1"
                             android:layout_height="match_parent"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:inputType="textPersonName"
-                            android:textSize="12sp" />
+                            android:maxLength="255"
+                            android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="20dp"
-                        android:hint="@string/phone_number">
+                        android:orientation="horizontal">
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etPhoneNumberSignUp"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:hint=" +63"
+                            android:minEms="5">
+
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:drawableStart="@drawable/philippines"
+                                android:enabled="false"
+                                android:inputType="phone"
+                                android:textSize="14sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:inputType="phone"
-                            android:textSize="12sp" />
+                            android:layout_height="wrap_content"
+                            android:hint="@string/phone_number"
+                            app:counterEnabled="true"
+                            app:counterMaxLength="10"
+                            app:endIconMode="clear_text"
+                            app:endIconTint="#77000000">
 
-                    </com.google.android.material.textfield.TextInputLayout>
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etPhoneNumberSignUp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:digits="0123456789"
+                                android:inputType="phone"
+                                android:maxLength="11"
+                                android:textSize="14sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
                         android:layout_marginEnd="20dp"
                         android:hint="@string/password"
                         app:endIconMode="password_toggle"
-                        app:endIconTint="#77000000">
+
+                        app:endIconTint="#77000000"
+                        app:errorEnabled="true">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etPasswordSignUp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:inputType="textPassword"
-                            android:textSize="12sp" />
+                            android:maxLength="255"
+                            android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -157,26 +172,28 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
                         android:layout_marginEnd="20dp"
                         android:hint="@string/repeat_password"
                         app:endIconMode="password_toggle"
-                        app:endIconTint="#77000000">
+                        app:endIconTint="#77000000"
+                        app:errorEnabled="true">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etRepeatPasswordSignUp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:inputType="textPassword"
-                            android:textSize="12sp" />
+                            android:maxLength="255"
+                            android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.button.MaterialButton
+                    <Button
+                        android:id="@+id/btnSignUpSignUp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="60dp"
                         android:text="@string/sign_up" />
@@ -187,4 +204,39 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up"
+        android:textColor="@color/md_theme_light_primary"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cvRegisterParent"
+        app:layout_constraintEnd_toEndOf="@+id/cvRegisterParent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="-10dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/cvRegisterParent"-->
+<!--        app:cardCornerRadius="20dp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/cvRegisterParent"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/cvRegisterParent">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:paddingStart="20dp"-->
+<!--            android:gravity="center"-->
+<!--            android:paddingEnd="20dp"-->
+<!--            android:paddingTop="5dp"-->
+<!--            android:paddingBottom="5dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            -->
+<!--        </LinearLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

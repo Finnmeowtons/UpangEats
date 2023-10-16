@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.upangeats.databinding.FragmentForgotPasswordBinding
 
 
@@ -16,6 +17,15 @@ class ForgotPasswordFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentForgotPasswordBinding.inflate(inflater, container, false)
+
+
+        binding.imgbtnBackForgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_forgotPasswordFragment_to_loginFragment)
+        }
+
+        binding.btnSendForgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_forgotPasswordFragment_to_setNewPasswordFragment)
+        }
         // Inflate the layout for this fragment
         return binding.root
     }
