@@ -9,4 +9,12 @@
     <string name="full_name">Full Name</string>
     <string name="email">E-mail</string>
     <string name="log_out">Log out</string>
+    <string name="email_title">Email</string>
+    <string name="password_title">Password</string>
+    <string name="remember_me_title">Remember me</string>
+    <string name="forgot_password_title">Forgot Password</string>
+    <string name="login_title">Login</string>
+    <string name="do_you_have_an_account_title">Do you have an account?</string>
+    <string name="lognin_title">LognIn</string>
+    <string name="upangeats_title">UpangEats</string>
 </resources>
