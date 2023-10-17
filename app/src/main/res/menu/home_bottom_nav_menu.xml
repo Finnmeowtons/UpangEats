@@ -10,20 +10,12 @@
         android:title="Home" />
 
     <item
-        android:id="@+id/bottomNavTray"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:enabled="true"
-        android:icon="@drawable/tray_selector"
-        android:title="Tray" />
-
-    <item
-        android:id="@+id/bottomNavFavorites"
+        android:id="@+id/bottomNavChat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:enabled="true"
         android:icon="@drawable/chats_selector"
-        android:title="Favorites" />
+        android:title="Chat" />
 
     <item
         android:id="@+id/bottomNavStalls"
@@ -32,4 +24,13 @@
         android:enabled="true"
         android:icon="@drawable/stalls_selector"
         android:title="Stalls" />
+
+    <item
+        android:id="@+id/bottomNavTray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:icon="@drawable/tray_selector"
+        android:title="Tray" />
+
 </menu>

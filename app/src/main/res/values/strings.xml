@@ -1,3 +1,4 @@
+<!DOCTYPE resources [<!ENTITY at "@">]>
 <resources>
     <string name="app_name">UPANG EATS</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -7,6 +8,7 @@
     <string name="password">Password</string>
     <string name="phone_number">Phone Number</string>
     <string name="full_name">Full Name</string>
-    <string name="email">E-mail</string>
+    <string name="email">PhinmaEd E-mail</string>
     <string name="log_out">Log out</string>
+    <string name="at_phinmaed_dot_com">&at;phinmaed.com</string>
 </resources>

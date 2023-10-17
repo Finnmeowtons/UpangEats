@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.upangeats.databinding.FragmentLoginBinding
-import com.example.upangeats.databinding.FragmentRegisterBinding
 
 
 class LoginFragment : Fragment() {
@@ -20,6 +19,13 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         //Move to another fragment by clicking a button
        
+        binding.tvSignUpHere.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
+
+        binding.tvForgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
+        }
 
         return binding.root
     }

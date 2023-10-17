@@ -23,23 +23,23 @@ class HomeFragment : Fragment() {
         binding.bottomNavigationView.setOnItemSelectedListener {item ->
             when(item.itemId) {
                 R.id.bottomNavHome -> {
-
+                    replaceFragment(HomeHomeFragment())
 
                     true
                 }
 
                 R.id.bottomNavTray -> {
-                    // Respond to navigation item 2 click
+                    replaceFragment(OrderTrayFragment())
                     true
                 }
 
-                R.id.bottomNavFavorites -> {
-
+                R.id.bottomNavChat -> {
+                    replaceFragment(ChatFragment())
                     true
                 }
 
                 R.id.bottomNavStalls -> {
-                    // Respond to navigation item 2 click
+                    replaceFragment(StallsFragment())
                     true
                 }
 
@@ -51,6 +51,12 @@ class HomeFragment : Fragment() {
         return binding.root
 
 
+    }
+
+    fun replaceFragment(fragment: Fragment){
+        childFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
     }
 
 }
