@@ -8,13 +8,27 @@
     tools:context=".MainActivity">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stalls"
+        android:textColor="#32620E"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:layout_constraintVertical_bias="0.775">
+
+    </TextView>
+
     <androidx.cardview.widget.CardView
 
         android:id="@+id/cardView3"
         android:layout_width="match_parent"
         android:layout_height="560dp"
-
-        app:cardBackgroundColor="#93C169"
+        app:cardBackgroundColor="#529b1c"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

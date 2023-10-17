@@ -30,7 +30,6 @@ class StallsFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding = FragmentStallsBinding.inflate(inflater, container, false)
         binding.stallsrecyclerView.layoutManager = LinearLayoutManager(this.context)
-        binding.stallsrecyclerView.setBackgroundColor(Color.GREEN)
         binding.stallsrecyclerView.adapter = stallsAdapter(
             stallList,
         ) { selectedItem: Stalls ->
