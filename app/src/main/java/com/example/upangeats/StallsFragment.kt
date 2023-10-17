@@ -28,9 +28,9 @@ class StallsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
-        val binding = FragmentStallsBinding.inflate(inflater, container, false)
-        binding.stallsrecyclerView.layoutManager = LinearLayoutManager(this.context)
-        binding.stallsrecyclerView.adapter = stallsAdapter(
+        binding = FragmentStallsBinding.inflate(inflater, container, false)
+        binding.stallsRecyclerView.layoutManager = LinearLayoutManager(this.context)
+        binding.stallsRecyclerView.adapter = stallsAdapter(
             stallList,
         ) { selectedItem: Stalls ->
             listItemClicked(selectedItem)

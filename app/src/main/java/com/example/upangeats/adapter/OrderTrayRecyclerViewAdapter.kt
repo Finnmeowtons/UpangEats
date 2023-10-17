@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.upangeats.R
 
 class OrderTrayRecyclerViewAdapter : RecyclerView.Adapter<OrderTrayViewHolder>() {
-    val order = listOf<String>("HEHE","OPO")
+    val order = listOf<String>("HEHE","OPO","OPO","OPO","OPO","OPO","OPO","OPO","OPO","OPO","OPO","OPO","OPO","OPO")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderTrayViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.tray_items,parent,false)
         return OrderTrayViewHolder(view)
