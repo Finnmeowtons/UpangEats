@@ -16,7 +16,7 @@ class StallsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
-        val binding = FragmentStallsBinding.inflate(inflater, container, false)
+        binding = FragmentStallsBinding.inflate(inflater, container, false)
         binding.stallsrecyclerView.layoutManager = LinearLayoutManager(this.context)
         binding.stallsrecyclerView.setBackgroundColor(Color.GREEN)
         binding.stallsrecyclerView.adapter = stallsAdapter()
