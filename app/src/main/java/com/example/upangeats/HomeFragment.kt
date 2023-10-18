@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.Fragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.upangeats.databinding.FragmentHomeBinding
 
 
@@ -24,7 +26,6 @@ class HomeFragment : Fragment() {
             when(item.itemId) {
                 R.id.bottomNavHome -> {
                     replaceFragment(HomeHomeFragment())
-
                     true
                 }
 
@@ -39,7 +40,7 @@ class HomeFragment : Fragment() {
                 }
 
                 R.id.bottomNavStalls -> {
-                    replaceFragment(StallsFragment())
+                    replaceFragment(ProfileFragment())
                     true
                 }
 
@@ -47,6 +48,10 @@ class HomeFragment : Fragment() {
             }
 
         }
+
+
+
+
 
         return binding.root
 
@@ -58,5 +63,7 @@ class HomeFragment : Fragment() {
             .replace(R.id.fragmentContainer, fragment)
             .commit()
     }
+
+
 
 }

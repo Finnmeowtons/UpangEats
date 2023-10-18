@@ -16,12 +16,15 @@ class OrderTrayFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        val binding = FragmentOrderTrayBinding.inflate(inflater, container, false)
+        binding = FragmentOrderTrayBinding.inflate(inflater, container, false)
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
         binding.recyclerView.adapter = OrderTrayRecyclerViewAdapter()
 
 
+
+
         return binding.root
     }
+
 }

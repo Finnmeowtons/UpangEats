@@ -6,22 +6,32 @@
     <item
         android:id="@+id/main_item"
         android:icon="@drawable/account_circle_filled"
+        android:enabled="true"
+        android:checkable="true"
         android:title="Profile" />
 
     <item
         android:id="@+id/rotation_item"
+        android:enabled="true"
+        android:checkable="true"
         android:title="History">
 
         <menu>
             <item
                 android:id="@+id/accelerator_item"
+                android:enabled="true"
+                android:checkable="true"
                 android:title="Settings" />
             <item
                 android:id="@+id/dashboard_item"
+                android:enabled="true"
+                android:checkable="true"
                 android:title="Cloche" />
 
             <item
                 android:id="@+id/labels_item"
+                android:enabled="true"
+                android:checkable="true"
                 android:title="Neil" />
 
 

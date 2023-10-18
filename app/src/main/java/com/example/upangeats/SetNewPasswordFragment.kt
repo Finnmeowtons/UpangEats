@@ -19,7 +19,7 @@ class SetNewPasswordFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSetNewPasswordBinding.inflate(inflater, container, false)
 
-        binding.imgbtnBackSetNewPass.setOnClickListener {
+        binding.imgbtnBackSetNewPassword.setOnClickListener {
             findNavController().navigate(R.id.action_setNewPasswordFragment_to_forgotPasswordFragment)
         }
 
