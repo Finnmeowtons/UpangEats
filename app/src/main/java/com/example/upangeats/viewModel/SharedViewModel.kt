@@ -8,4 +8,6 @@ class SharedViewModel : ViewModel(){
     private val _uiState = MutableLiveData<Unit>()
     val uiState: LiveData<Unit> get() = _uiState
 
+
+    val sideNavDrawerSelectedState = MutableLiveData<Int>()
 }

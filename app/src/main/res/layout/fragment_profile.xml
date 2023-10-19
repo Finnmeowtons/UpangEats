@@ -48,7 +48,7 @@
         android:ellipsize="end"
         android:gravity="center|top"
         android:maxLines="2"
-        android:minLines="2"
+        android:minLines="1"
         android:text="Neil D. Merto"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/cardView4"

@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="160dp"
-        android:background="@color/md_theme_light_primary"
+        android:background="#B1D090"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,7 +75,6 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="20dp"
                 android:hint="E-mail"
-                app:startIconDrawable="@drawable/account_circle_filled"
                 app:endIconMode="clear_text"
                 app:endIconTint="#77000000"
                 app:errorEnabled="true">
@@ -87,7 +86,7 @@
                     android:layout_height="match_parent"
                     android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._-1234567890"
                     android:inputType="textEmailAddress"
-                    android:maxLength="64"
+                    android:maxLength="32"
                     android:maxLines="1"
                     android:textSize="14sp" />
 
@@ -97,7 +96,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                app:startIconDrawable="@drawable/baseline_lock_24"
                 android:layout_marginEnd="20dp"
                 android:hint="@string/password"
                 app:endIconMode="password_toggle"
@@ -126,18 +124,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="10dp"
-
+                    android:visibility="gone"
                     android:text="Remember me" />
 
 
                 <TextView
                     android:id="@+id/tvForgotPassword"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
-                    android:gravity="end"
+                    android:gravity="end|top"
                     android:text="Forgot Password?" />
 
             </LinearLayout>
@@ -147,8 +145,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="40dp"
                 android:text="Log In" />
 

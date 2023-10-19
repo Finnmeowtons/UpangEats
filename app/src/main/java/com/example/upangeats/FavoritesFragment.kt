@@ -22,7 +22,7 @@ class FavoritesFragment : Fragment() {
         binding.recyclerViewFavorites.layoutManager= LinearLayoutManager(this.context)
         binding.recyclerViewFavorites.adapter=FavoriteRecyclerViewAdapter()
 
-
+        val id = 2131362041
 
         return binding.root
     }
