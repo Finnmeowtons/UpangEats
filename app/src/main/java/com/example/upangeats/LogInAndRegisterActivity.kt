@@ -3,6 +3,7 @@ package com.example.upangeats
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.upangeats.databinding.LoginRegisterMainBinding
@@ -15,6 +16,8 @@ class LogInAndRegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = LoginRegisterMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         buttonClickViewModel = ViewModelProvider(this)[LogInActivityToMainActivityViewModel::class.java]
 

@@ -26,7 +26,7 @@
         android:id="@+id/cvRegisterParent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="120dp"
         app:cardBackgroundColor="#B1D090"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +40,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:layout_width="360dp"
+                android:layout_width="315dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 app:cardCornerRadius="20dp"
@@ -64,15 +64,26 @@
                         app:endIconMode="clear_text"
                         app:endIconTint="#77000000">
 
+<!--                        <com.google.android.material.textfield.TextInputEditText-->
+<!--                            android:id="@+id/etEmailSignUp"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._-1234567890@"-->
+<!--                            android:inputType="text"-->
+<!--                            android:maxLines="1"-->
+<!--                            android:maxLength="32"-->
+<!--                            android:textSize="11sp" />-->
+
                         <com.google.android.material.textfield.TextInputEditText
+                            android:maxLength="32"
                             android:id="@+id/etEmailSignUp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:textSize="14sp"
+                            android:singleLine="true"
                             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._-1234567890@"
-                            android:inputType="text"
-                            android:maxLines="1"
-                            android:maxLength="32"
-                            android:textSize="14sp" />
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,17 +97,30 @@
                         app:endIconMode="clear_text"
                         app:endIconTint="#77000000">
 
+<!--                        <com.google.android.material.textfield.TextInputEditText-->
+<!--                            android:id="@+id/etFullNameSignUp"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:scrollHorizontally="true"-->
+<!--                            android:ellipsize="end"-->
+<!--                            android:maxLines="1"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"-->
+<!--                            android:inputType="textPersonName"-->
+<!--                            android:maxLength="50"-->
+<!--                            android:textSize="11sp" />-->
+
+
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etFullNameSignUp"
-                            android:layout_width="match_parent"
-                            android:scrollHorizontally="true"
-                            android:ellipsize="end"
-                            android:maxLines="1"
-                            android:layout_height="match_parent"
-                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                            android:inputType="textPersonName"
                             android:maxLength="50"
-                            android:textSize="14sp" />
+                            android:id="@+id/etFullNameSignUp"
+                            android:singleLine="true"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="14sp"
+                            android:inputType="textPersonName"
+                            android:maxLines="1" />
+
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,9 +135,10 @@
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:boxBackgroundColor="#11000000"
                             android:layout_marginEnd="15dp"
                             android:hint=" +63"
-                            android:minEms="5">
+                            android:minEms="6">
 
 
                             <com.google.android.material.textfield.TextInputEditText
