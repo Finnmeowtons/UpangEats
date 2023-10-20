@@ -5,9 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class SharedViewModel : ViewModel(){
-    private val _uiState = MutableLiveData<Unit>()
-    val uiState: LiveData<Unit> get() = _uiState
-
 
     val sideNavDrawerSelectedState = MutableLiveData<Int>()
+
+    val currentFragmentTag = MutableLiveData<String>()
 }

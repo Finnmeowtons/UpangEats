@@ -97,6 +97,10 @@ class HomeFragment : Fragment() {
     private fun replaceFragment(fragment: Fragment) {
         parentFragmentManager
             .beginTransaction()
+            .setCustomAnimations(
+                R.anim.nav_enter_anim,
+                R.anim.nav_exit_anim
+            )
             .replace(R.id.frameLayout, fragment)
             .commit()
     }

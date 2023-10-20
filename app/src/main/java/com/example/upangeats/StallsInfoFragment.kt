@@ -18,8 +18,6 @@ class StallsInfoFragment : Fragment() {
         binding = FragmentStallsInfoBinding.inflate(inflater, container, false)
 
 
-
-
         return binding.root
     }
 }
