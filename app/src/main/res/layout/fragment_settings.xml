@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".SettingsFragment">
 
-    <ImageButton
-        android:id="@+id/imgbtnBackSetNewPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="@null"
-        android:src="@drawable/baseline_arrow_back_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/md_theme_light_tertiary" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -25,24 +14,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgbtnBackSetNewPassword">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            android:text="Settings"
-            android:textColor="@color/md_theme_light_onPrimaryContainer"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <androidx.cardview.widget.CardView
-            android:focusable="true"
-            android:clickable="true"
-            android:layout_width="350dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
+            android:clickable="true"
+            android:focusable="true"
             app:cardBackgroundColor="@color/md_theme_light_primary"
             app:cardCornerRadius="10dp">
 
@@ -52,9 +32,9 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="5dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
                     android:layout_weight="1"
                     android:src="@drawable/baseline_person_24"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -65,13 +45,13 @@
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginBottom="18dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_weight="6"
                     android:gravity="center"
                     android:text="Account"
                     android:textColor="@color/md_theme_light_onTertiary"
-                    android:textSize="25sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -83,11 +63,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:focusable="true"
-            android:clickable="true"
-            android:layout_width="350dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
+            android:clickable="true"
+            android:focusable="true"
             app:cardCornerRadius="10dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -95,9 +75,9 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="15dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="15dp"
                     android:layout_weight="1"
                     android:src="@drawable/baseline_info_24"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -108,13 +88,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginBottom="18dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_weight="6"
                     android:gravity="center"
                     android:text="About Us"
                     android:textColor="@color/md_theme_light_onPrimaryContainer"
-                    android:textSize="25sp"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias=".4"
@@ -126,11 +106,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:focusable="true"
-            android:clickable="true"
-            android:layout_width="350dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
+            android:clickable="true"
+            android:focusable="true"
             app:cardCornerRadius="10dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -138,9 +118,9 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="15dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="15dp"
                     android:layout_weight="1"
                     android:src="@drawable/baseline_sticky_note_2_24"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -152,13 +132,13 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginBottom="18dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_weight="6"
                     android:gravity="center"
                     android:text="Term of Service"
                     android:textColor="@color/md_theme_light_onPrimaryContainer"
-                    android:textSize="25sp"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias=".4"
@@ -170,11 +150,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:focusable="true"
-            android:clickable="true"
-            android:layout_width="350dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="80dp"
+            android:clickable="true"
+            android:focusable="true"
             app:cardCornerRadius="10dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -182,9 +162,9 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:layout_margin="17dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="15dp"
                     android:layout_weight="1"
                     android:src="@drawable/baseline_warning_24"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -196,13 +176,13 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginBottom="18dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_weight="6"
                     android:gravity="center"
                     android:text="Report a Problem"
                     android:textColor="@color/md_theme_light_onPrimaryContainer"
-                    android:textSize="25sp"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias=".4"

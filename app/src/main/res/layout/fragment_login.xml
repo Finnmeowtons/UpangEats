@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="160dp"
-        android:background="@color/md_theme_light_primary"
+        android:background="#B1D090"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,35 +28,61 @@
         app:tint="@color/md_theme_light_primary" />
 
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:src="@drawable/upang_eats___2_"
+        android:id="@+id/imgLogoLogin"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
         android:layout_marginTop="60dp"
-        android:text="LOGO"
-        android:textSize="90sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:textColor="@color/md_theme_light_tertiary"
+        android:id="@+id/tvUpangEats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Upang Eats"
+        android:textAllCaps="true"
+        android:textColor="@color/md_theme_light_primary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogoLogin" />
+
+    <TextView
+        android:textColor="#888888"
+        android:id="@+id/tvToGoApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="Go-To App"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUpangEats" />
+
+
+    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="Login"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
+        android:textColor="@color/md_theme_light_tertiary"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/tvToGoApp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="360dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,21 +101,31 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="20dp"
                 android:hint="E-mail"
-                app:startIconDrawable="@drawable/account_circle_filled"
                 app:endIconMode="clear_text"
                 app:endIconTint="#77000000"
                 app:errorEnabled="true">
 
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:imeOptions="actionNext"-->
+<!--                    android:id="@+id/etEmailSignUp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._-1234567890"-->
+<!--                    android:inputType="textEmailAddress"-->
+<!--                    android:maxLength="32"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:textSize="11sp" />-->
+
                 <com.google.android.material.textfield.TextInputEditText
-                    android:imeOptions="actionNext"
-                    android:id="@+id/etEmailSignUp"
+                    android:maxLength="32"
+                    android:singleLine="true"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._-1234567890@"
+                    android:id="@+id/etEmailLogIn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._-1234567890"
+                    android:textSize="14sp"
                     android:inputType="textEmailAddress"
-                    android:maxLength="64"
-                    android:maxLines="1"
-                    android:textSize="14sp" />
+                    android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,7 +133,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                app:startIconDrawable="@drawable/baseline_lock_24"
                 android:layout_marginEnd="20dp"
                 android:hint="@string/password"
                 app:endIconMode="password_toggle"
@@ -126,18 +161,19 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="10dp"
-
+                    android:visibility="gone"
                     android:text="Remember me" />
 
 
                 <TextView
+                    android:textSize="12sp"
                     android:id="@+id/tvForgotPassword"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
-                    android:gravity="end"
+                    android:gravity="end|top"
                     android:text="Forgot Password?" />
 
             </LinearLayout>
@@ -147,8 +183,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="40dp"
                 android:text="Log In" />
 
@@ -164,12 +200,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
+                    android:textSize="12sp"
                     android:text="Don't have an account?" />
 
                 <TextView
                     android:id="@+id/tvSignUpHere"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="12sp"
                     android:text="Sign up here."
                     android:textColor="#2222FF" />
             </LinearLayout>
