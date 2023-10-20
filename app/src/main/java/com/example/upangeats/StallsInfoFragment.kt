@@ -22,8 +22,6 @@ class StallsInfoFragment : Fragment() {
         binding.stallInfosRecyclerView.adapter = StallsInfoAdapter()
 
 
-
-
         return binding.root
     }
 }

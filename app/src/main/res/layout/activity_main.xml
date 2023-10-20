@@ -12,12 +12,11 @@
         layout="@layout/app_bar_main"/>
 
 
-
     <FrameLayout
         android:id="@+id/navFragment"
         android:layout_width="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:paddingTop="?attr/actionBarSize"/>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/sideNavDrawer"
