@@ -12,4 +12,7 @@
     <string name="email">PhinmaEd E-mail</string>
     <string name="log_out">Log out</string>
     <string name="at_phinmaed_dot_com">&at;phinmaed.com</string>
+
+    <string name="material_motion_easing_accelerated" translatable="false">cubic-bezier(0.4, 0.0, 1.0, 1.0)</string>
+    <string name="material_motion_easing_decelerated" translatable="false">cubic-bezier(0.0, 0.0, 0.2, 1.0)</string>
 </resources>

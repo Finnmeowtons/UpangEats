@@ -1,25 +1,20 @@
 package com.example.upangeats
 
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
+import android.R
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
-import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.add
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import com.example.upangeats.databinding.ActivityMainBinding
 import com.example.upangeats.viewModel.SharedViewModel
 import com.google.android.material.navigation.NavigationView
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var binding: ActivityMainBinding
@@ -35,8 +30,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         } else {
-            supportFragmentManager.popBackStack()
+            if(this.supportFragmentManager.findFragmentByTag("HOMER")?.isVisible == false) {
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(
+                        com.google.android.material.R.anim.abc_fade_in,
+                        com.google.android.material.R.anim.abc_fade_out
+                    )
+                    .replace(R.id.navFragment, HomeFragment(), "HOMER")
+                    .commit()
 
+
+            }
         }
     }
 

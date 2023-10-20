@@ -25,30 +25,35 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+
+        val toolbar2 = activity?.findViewById<MaterialToolbar>(R.id.toolbar2)
+        val toolbar = activity?.findViewById<MaterialToolbar>(R.id.toolbar)
+
         bottomNavViewModel = ViewModelProvider(requireActivity())[BottomNavViewModel::class.java]
         // Inflate the layout for this fragment
         if (bottomNavViewModel.selectedItemId.value == 2131361916) {
             replaceFragment(ChatFragment())
+            toolbar?.title = "Chat"
             binding.bottomNavigationView.selectedItemId = R.id.bottomNavChat
 
         } else if (bottomNavViewModel.selectedItemId.value == 2131361918) {
             replaceFragment(StallsFragment())
+            toolbar?.title = "Stalls"
             binding.bottomNavigationView.selectedItemId = R.id.bottomNavStalls
 
         } else if (bottomNavViewModel.selectedItemId.value == 2131361919) {
             replaceFragment(OrderTrayFragment())
+            toolbar?.title = "Tray"
             binding.bottomNavigationView.selectedItemId = R.id.bottomNavTray
 
         } else {
             replaceFragment(HomeHomeFragment())
+            toolbar?.title = "Home"
             binding.bottomNavigationView.selectedItemId = R.id.bottomNavHome
         }
 
-        val toolbar2 = activity?.findViewById<MaterialToolbar>(R.id.toolbar2)
 
-        val title = activity?.findViewById<MaterialToolbar>(R.id.toolbar)
-
-        title?.visibility = View.VISIBLE
+        toolbar?.visibility = View.VISIBLE
         toolbar2?.visibility = View.GONE
 
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
@@ -57,25 +62,25 @@ class HomeFragment : Fragment() {
             when (item.itemId) {
                 R.id.bottomNavHome -> {
                     replaceFragment(HomeHomeFragment())
-                    title?.title = "Home"
+                    toolbar?.title = "Home"
                     true
                 }
 
                 R.id.bottomNavTray -> {
                     replaceFragment(OrderTrayFragment())
-                    title?.title = "Tray"
+                    toolbar?.title = "Tray"
                     true
                 }
 
                 R.id.bottomNavChat -> {
                     replaceFragment(ChatFragment())
-                    title?.title = "Chat"
+                    toolbar?.title = "Chat"
                     true
                 }
 
                 R.id.bottomNavStalls -> {
                     replaceFragment(StallsFragment())
-                    title?.title = "Stalls"
+                    toolbar?.title = "Stalls"
                     true
                 }
 
