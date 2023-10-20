@@ -7,6 +7,7 @@
     tools:context=".HomeFragment">
 
     <FrameLayout
+        android:paddingTop="?attr/actionBarSize"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:id="@+id/frameLayout"
         app:defaultNavHost="true"

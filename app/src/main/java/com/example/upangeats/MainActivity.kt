@@ -76,11 +76,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         sideNavState()
 
         sharedViewModel.currentFragmentTag.observe(this) { activeFragment ->
-            Log.e("MyTag", "cliped")
             when (activeFragment) {
                 "StallsInfo" -> {
                     Log.e("MyTag", "cliped")
-                    binding.navFragment.setPadding(0,5,0,0)
                 }
 
             }
@@ -217,14 +215,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         } else {
             if (supportFragmentManager.backStackEntryCount > 0) { //If may nakapatong
-                supportFragmentManager.popBackStack()
                 when (sharedViewModel.currentFragmentTag.value) {
                     "StallsInfo" -> {
-                        Log.e("MyTag", "cliped")
-                        binding.navFragment.setPadding(0,50,0,0)
+                        Log.e("MyTag", "clipeddd")
                     }
 
                 }
+                supportFragmentManager.popBackStack()
+
 
             } else if (binding.sideNavDrawer.checkedItem?.itemId != 2131362078) { //If hindi selected ang home item
                 supportFragmentManager
@@ -236,17 +234,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .replace(R.id.navFragment, HomeFragment())
                     .commit()
                 when (bottomNavViewModel.selectedItemId.value) {
-                    2131361916 -> {
+                    R.id.bottomNavChat -> {
                         binding.appBarMain.toolbar.title = "Chat"
                     }
 
-                    2131361918 -> {
-                        binding.appBarMain.toolbar.title = "Stalls"
+                    R.id.bottomNavTray -> {
+                        binding.appBarMain.toolbar.title = "Tray"
 
                     }
 
-                    2131361919 -> {
-                        binding.appBarMain.toolbar.title = "Tray"
+                    R.id.bottomNavStalls -> {
+                        binding.appBarMain.toolbar.title = "Stalls"
 
                     }
 
@@ -259,12 +257,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             } else if (
                 binding.sideNavDrawer.checkedItem?.itemId == 2131362078 &&
-                bottomNavViewModel.selectedItemId.value == 2131361916 ||
-                bottomNavViewModel.selectedItemId.value == 2131361918 ||
-                bottomNavViewModel.selectedItemId.value == 2131361919
+                bottomNavViewModel.selectedItemId.value == R.id.bottomNavChat ||
+                bottomNavViewModel.selectedItemId.value == R.id.bottomNavTray ||
+                bottomNavViewModel.selectedItemId.value == R.id.bottomNavStalls
             ) {
                 val bottomNavBar = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-                bottomNavViewModel.selectedItemId.value = 2131361917
+                bottomNavViewModel.selectedItemId.value = R.id.bottomNavHome
                 binding.appBarMain.toolbar.title = "Home"
                 bottomNavBar.selectedItemId = R.id.bottomNavHome
                 supportFragmentManager

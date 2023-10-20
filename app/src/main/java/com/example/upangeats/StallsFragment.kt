@@ -48,7 +48,9 @@ class StallsFragment : Fragment() {
             requireActivity().supportFragmentManager.beginTransaction()
                 .setCustomAnimations(
                     R.anim.go_up,
-                    R.anim.compress
+                    R.anim.compress,
+                    R.anim.decompress,
+                    R.anim.go_down
                 )
                 .replace(R.id.navFragment, StallsInfoFragment(), "StallsInfo")
                 .addToBackStack(null)

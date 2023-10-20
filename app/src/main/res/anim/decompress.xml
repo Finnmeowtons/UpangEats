@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:fillAfter="false"
-    android:duration="?attr/motionDurationShort1">
+    android:shareInterpolator="true"
+    android:duration="?attr/motionDurationShort1"
+    android:interpolator="?attr/motionEasingStandardInterpolator">
 
 <!--    <scale-->
 <!--        android:fromYScale="1.0"-->
 <!--        android:toYScale="0.0"/>-->
     <alpha
-        android:fromAlpha="1.0"
-        android:toAlpha="0.0" />
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0" />
 
 </set>

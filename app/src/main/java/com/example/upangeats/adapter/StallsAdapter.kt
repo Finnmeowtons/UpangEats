@@ -42,9 +42,6 @@ class StallsAdapter(
 
 class StallsViewHolder(val view:View):RecyclerView.ViewHolder(view){
     fun bind(stalls: Stalls, clickListener:(Stalls)-> Unit) {
-        val myTextView = view.findViewById<TextView>(R.id.tvStalls)
-
-        myTextView.text = stalls.name
 
         view.setOnClickListener {
             clickListener(stalls)

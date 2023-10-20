@@ -2,13 +2,11 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:shareInterpolator="true"
     android:duration="?attr/motionDurationLong1"
-    android:interpolator="?attr/motionEasingStandardInterpolator">
+    android:interpolator="?attr/motionEasingEmphasizedAccelerateInterpolator">
 
     <translate
-        android:fromYDelta="50%p"
-        android:toYDelta="0" />
-    <alpha
-        android:fromAlpha="0.0"
-        android:toAlpha="1.0" />
+        android:fromYDelta="0"
+        android:toYDelta="50%p" />
+
 
 </set>
