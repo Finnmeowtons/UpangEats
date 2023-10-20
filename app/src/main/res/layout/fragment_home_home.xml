@@ -91,7 +91,7 @@
             app:srcCompat="@drawable/noodles_png_image_sqaure" />
 
         <ImageButton
-            android:id="@+id/bokojos"
+            android:id="@+id/bukojuice"
             android:layout_width="51dp"
             android:layout_height="59dp"
             android:layout_marginStart="25dp"
@@ -101,7 +101,7 @@
             app:srcCompat="@drawable/bokojos" />
 
         <ImageButton
-            android:id="@+id/prays"
+            android:id="@+id/fries"
             android:layout_width="51dp"
             android:layout_height="59dp"
             android:layout_marginStart="25dp"
@@ -147,11 +147,5 @@
         android:text="Breakfast Meals"
         android:textColor="#32620e"
         android:textSize="20sp" />
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </FrameLayout>
 
 </RelativeLayout>
