@@ -137,17 +137,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.home_item -> {
-                sharedViewModel.sideNavDrawerSelectedState.postValue(item.itemId)
-                binding.appBarMain.toolbar2.title = "Home"
-                Log.e("MyTag", binding.sideNavDrawer.checkedItem?.itemId.toString())
-                replaceFragment(HomeFragment())
-                visibleToolbarOne()
+
+                if (sharedViewModel.sideNavDrawerSelectedState.value == R.id.home_item) {
+                    sharedViewModel.sideNavDrawerSelectedState.postValue(item.itemId)
+                    binding.appBarMain.toolbar2.title = "Home"
+                    Log.e("MyTag", binding.sideNavDrawer.checkedItem?.itemId.toString())
+                    replaceFragment(HomeFragment())
+                    visibleToolbarOne()
+                }
 
             }
 
             R.id.history_item -> {
                 sharedViewModel.sideNavDrawerSelectedState.value = item.itemId
-//                replaceFragment(HomeHomeFragment())
+                replaceFragment(HistoryFragment())
                 binding.appBarMain.toolbar2.title = "History"
                 visibleToolbarTwo()
 

@@ -10,7 +10,7 @@ import com.example.upangeats.R
 class StallsInfoAdapter : RecyclerView.Adapter<StallsInfoViewHolder>() {
     override fun onCreateViewHolder(parent : ViewGroup, viewType: Int): StallsInfoViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val stallsInfoListItem = layoutInflater.inflate(R.layout.stalls_info_list_item,parent,false)
+        val stallsInfoListItem = layoutInflater.inflate(R.layout.food_product_list_item,parent,false)
         return StallsInfoViewHolder((stallsInfoListItem))
     }
 
@@ -19,13 +19,13 @@ class StallsInfoAdapter : RecyclerView.Adapter<StallsInfoViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: StallsInfoViewHolder, position: Int) {
-    holder.textView1.text = "sdsadsad"
-    holder.textView2.text = "dasdasdasdasd"
+//    holder.textView1.text = "sdsadsad"
+//    holder.textView2.text = "dasdasdasdasd"
     }
 }
 
 class StallsInfoViewHolder(val view:View) : RecyclerView.ViewHolder(view){
-    var textView1 = view.findViewById<TextView>(R.id.tvFoodProduct3)
-    val textView2 = view.findViewById<TextView>(R.id.tvFoodProduct4)
+//    var textView1 = view.findViewById<TextView>(R.id.tvFoodProduct3)
+//    val textView2 = view.findViewById<TextView>(R.id.tvFoodProduct4)
 
 }

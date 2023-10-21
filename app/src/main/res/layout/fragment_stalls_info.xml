@@ -7,23 +7,44 @@
     android:background="@color/md_theme_light_background"
     tools:context=".StallsInfoFragment">
 
-    <androidx.cardview.widget.CardView
+
+    <ImageView
         android:id="@+id/imgbtnBackStallsInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        app:cardBackgroundColor="@color/transparent"
         android:elevation="20dp"
+        android:src="@drawable/baseline_arrow_back_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/md_theme_light_onSecondary" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/baseline_arrow_back_24"
-            app:tint="@color/md_theme_light_onSecondary" />
-    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:id="@+id/imgbtnChatStallsInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:elevation="20dp"
+        android:src="@drawable/outline_chat_bubble_outline_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/md_theme_light_onSecondary" />
+
+
+    <ImageView
+        android:id="@+id/imgbtnTrayStallsInfo"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="20dp"
+        android:elevation="20dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/outline_cloche"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnChatStallsInfo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/md_theme_light_onSecondary" />
+
 
     <ImageView
         android:id="@+id/imgStallStallInfo"
@@ -46,11 +67,22 @@
         app:layout_constraintStart_toStartOf="@+id/imgStallStallInfo"
         app:layout_constraintTop_toTopOf="@+id/imgStallStallInfo" />
 
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/green_gradient"
+        app:layout_constraintBottom_toBottomOf="@+id/imgStallStallInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/montserrat"
         android:text="Stall ni Adele Blue"
         android:textAllCaps="true"
         android:textColor="@color/md_theme_light_onSecondary"
@@ -109,6 +141,7 @@
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView6"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="-25dp"
@@ -145,9 +178,9 @@
 
             <FrameLayout
                 android:id="@+id/frameLayoutFoodReviews"
-                android:layout_marginBottom="-15dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp" />
         </LinearLayout>
 
 

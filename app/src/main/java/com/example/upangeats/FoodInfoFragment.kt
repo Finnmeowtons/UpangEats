@@ -17,7 +17,6 @@ class FoodInfoFragment : Fragment() {
         binding = FragmentFoodInfoBinding.inflate(inflater, container, false)
 
 
-
         // Inflate the layout for this fragment
         return binding.root
     }
