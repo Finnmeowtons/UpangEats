@@ -22,22 +22,22 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center|top">
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="130dp"
-            android:src="@drawable/bokojos">
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="130dp"
+                android:src="@drawable/bokojos">
 
-        </ImageView>
+            </ImageView>
 
-        <TextView
-            android:id="@+id/tvFoodProduct3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bokojos"
-            android:textSize="20sp"
-            >
+            <TextView
+                android:id="@+id/tvFoodProduct3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bokojos"
+                android:textSize="20sp"
+                >
 
-        </TextView>
+            </TextView>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

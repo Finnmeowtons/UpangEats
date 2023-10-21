@@ -25,7 +25,7 @@ class StallsInfoAdapter : RecyclerView.Adapter<StallsInfoViewHolder>() {
 }
 
 class StallsInfoViewHolder(val view:View) : RecyclerView.ViewHolder(view){
-    var textView1 = view.findViewById<TextView>(R.id.tvStallsInfo1)
-    val textView2 = view.findViewById<TextView>(R.id.tvStallsInfo2)
+    var textView1 = view.findViewById<TextView>(R.id.tvFoodProduct3)
+    val textView2 = view.findViewById<TextView>(R.id.tvFoodProduct4)
 
 }
