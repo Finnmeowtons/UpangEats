@@ -17,10 +17,6 @@
     <group
         android:id="@+id/it2"
         android:checkableBehavior="single">
-    <item
-        android:id="@+id/profile_item"
-        android:icon="@drawable/account_circle_filled"
-        android:title="Profile" />
 
     <item
         android:id="@+id/history_item"

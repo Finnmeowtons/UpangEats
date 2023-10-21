@@ -9,12 +9,12 @@ import com.example.upangeats.R
 
 class FavoriteRecyclerViewAdapter:RecyclerView.Adapter<FavoriteRecyclerViewHolder> (){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteRecyclerViewHolder {
-        val view= LayoutInflater.from(parent.context).inflate(R.layout.recyclerviewfavoriteitem,parent,false)
+        val view= LayoutInflater.from(parent.context).inflate(R.layout.favorite_item,parent,false)
         return FavoriteRecyclerViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return 5
+        return 50
     }
 
     override fun onBindViewHolder(holder: FavoriteRecyclerViewHolder, position: Int) {

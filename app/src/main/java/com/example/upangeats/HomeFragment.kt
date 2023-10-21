@@ -35,12 +35,12 @@ class HomeFragment : Fragment() {
 
             R.id.bottomNavStalls -> {
                 replaceFragment(StallsFragment())
-                binding.bottomNavigationView.selectedItemId = R.id.bottomNavTray
+                binding.bottomNavigationView.selectedItemId = R.id.bottomNavStalls
             }
 
             R.id.bottomNavTray -> {
                 replaceFragment(OrderTrayFragment())
-                binding.bottomNavigationView.selectedItemId = R.id.bottomNavStalls
+                binding.bottomNavigationView.selectedItemId = R.id.bottomNavTray
             }
 
             else -> {

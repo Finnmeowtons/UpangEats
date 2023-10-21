@@ -11,6 +11,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
+import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.add
 import androidx.lifecycle.ViewModelProvider
@@ -40,6 +41,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         //Setting the toolbar as a top app bar
         setSupportActionBar(binding.appBarMain.toolbar)
+
+
 
         //Initializing Side Navigation Drawer
         binding.sideNavDrawer.setNavigationItemSelectedListener(this)
@@ -92,31 +95,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun sideNavState() {
         sharedViewModel.sideNavDrawerSelectedState.observe(this) { selectedItem ->
             when (selectedItem) {
-                2131362076 -> {
+                R.id.home_item -> {
                     binding.sideNavDrawer.setCheckedItem(R.id.home_item)
                     binding.appBarMain.toolbar2.title = "Home"
                     visibleToolbarOne()
                 }
 
-                2131362249 -> {
-                    binding.sideNavDrawer.setCheckedItem(R.id.profile_item)
-                    binding.appBarMain.toolbar2.title = "Profile"
-                    visibleToolbarTwo()
-                }
-
-                2131362041 -> {
+                R.id.favorite_item -> {
                     binding.sideNavDrawer.setCheckedItem(R.id.favorite_item)
                     binding.appBarMain.toolbar2.title = "Favorite"
                     visibleToolbarTwo()
                 }
 
-                2131362071 -> {
+                R.id.history_item -> {
                     binding.sideNavDrawer.setCheckedItem(R.id.history_item)
                     binding.appBarMain.toolbar2.title = "History"
                     visibleToolbarTwo()
                 }
 
-                2131362296 -> {
+                R.id.settings_item -> {
                     binding.sideNavDrawer.setCheckedItem(R.id.settings_item)
                     binding.appBarMain.toolbar2.title = "Settings"
                     visibleToolbarTwo()
@@ -140,19 +137,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.home_item -> {
-                sharedViewModel.sideNavDrawerSelectedState.value = item.itemId
+                sharedViewModel.sideNavDrawerSelectedState.postValue(item.itemId)
                 binding.appBarMain.toolbar2.title = "Home"
                 Log.e("MyTag", binding.sideNavDrawer.checkedItem?.itemId.toString())
                 replaceFragment(HomeFragment())
                 visibleToolbarOne()
-
-            }
-
-            R.id.profile_item -> {
-                sharedViewModel.sideNavDrawerSelectedState.value = item.itemId
-                replaceFragment(ProfileFragment())
-                binding.appBarMain.toolbar2.title = "Profile"
-                visibleToolbarTwo()
 
             }
 
@@ -224,7 +213,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 supportFragmentManager.popBackStack()
 
 
-            } else if (binding.sideNavDrawer.checkedItem?.itemId != 2131362078) { //If hindi selected ang home item
+            } else if (binding.sideNavDrawer.checkedItem?.itemId != R.id.home_item) { //If hindi selected ang home item
                 supportFragmentManager
                     .beginTransaction()
                     .setCustomAnimations(
@@ -256,7 +245,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
             } else if (
-                binding.sideNavDrawer.checkedItem?.itemId == 2131362078 &&
+                binding.sideNavDrawer.checkedItem?.itemId == R.id.home_item &&
                 bottomNavViewModel.selectedItemId.value == R.id.bottomNavChat ||
                 bottomNavViewModel.selectedItemId.value == R.id.bottomNavTray ||
                 bottomNavViewModel.selectedItemId.value == R.id.bottomNavStalls
@@ -274,7 +263,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .replace(R.id.frameLayout, HomeHomeFragment())
                     .commit()
             }
-            sharedViewModel.sideNavDrawerSelectedState.value = 2131362076
+            sharedViewModel.sideNavDrawerSelectedState.postValue(R.id.home_item)
             binding.sideNavDrawer.setCheckedItem(R.id.home_item)
         }
     }

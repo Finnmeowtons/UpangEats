@@ -4,204 +4,370 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#AAFFFFFF"
+    android:background="@color/md_theme_light_background"
     tools:context=".StallsInfoFragment">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView6"
-        android:layout_width="0dp"
-        android:layout_height="310dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/imgbtnBackStallsInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/transparent"
+        android:elevation="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:cardCornerRadius="16dp"
-        android:layout_marginTop="-15dp"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageButton
-                android:id="@+id/imgbtnBackStallsInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="35dp"
-                android:background="@null"
-                android:src="@drawable/baseline_arrow_back_24"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/md_theme_light_primary" />
-
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="75dp"
-                android:layout_marginEnd="25dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="125dp"
-                    android:layout_height="125dp"
-                    app:cardBackgroundColor="@color/md_theme_light_primary"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="8dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:padding="5dp">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="115dp"
-                            android:layout_height="115dp"
-                            app:cardCornerRadius="10dp"
-                            app:cardElevation="0dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/stall_number_1" />
-                            </LinearLayout>
-                        </androidx.cardview.widget.CardView>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="Stall ni Adele Blue"
-                    android:textSize="24sp" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/linearLayout3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center|bottom"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/linearLayout"
-                app:layout_constraintTop_toBottomOf="@id/linearLayout"
-                app:layout_constraintVertical_bias=".55">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/outline_location_on_24"
-                    app:tint="@color/md_theme_light_primary" />
-
-                <TextView
-                    android:layout_marginStart="2dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Student's Plaza" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/linearLayout4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:gravity="center|bottom"
-                android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="@+id/linearLayout3"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    app:tint="@color/md_theme_light_primary"
-                    android:layout_height="20dp"
-                    android:src="@drawable/outline_star_outline_24" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:text="4.8"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:text="100+ ratings" />
-
-            </LinearLayout>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="See reviews"
-                android:textStyle="bold"
-                android:textColor="@color/md_theme_light_primary"
-                app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"
-                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-                app:layout_constraintTop_toTopOf="@+id/linearLayout4" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:tint="@color/md_theme_light_onSecondary" />
     </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="25dp"
-        app:tint="@color/md_theme_light_primary"
-        android:src="@drawable/cloche_best_selling"
+        android:id="@+id/imgStallStallInfo"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:background="@drawable/shadow_gradient"
+        android:paddingTop="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/stall_number_1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView6" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="Food"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Most ordered"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <androidx.recyclerview.widget.RecyclerView
+    <View
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/shadow_gradient"
+        app:layout_constraintBottom_toBottomOf="@+id/imgStallStallInfo"
+        app:layout_constraintEnd_toEndOf="@+id/imgStallStallInfo"
+        app:layout_constraintStart_toStartOf="@+id/imgStallStallInfo"
+        app:layout_constraintTop_toTopOf="@+id/imgStallStallInfo" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Stall ni Adele Blue"
+        android:textAllCaps="true"
+        android:textColor="@color/md_theme_light_onSecondary"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtnBackStallsInfo" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textView15"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/outline_location_on_24"
+            app:tint="@color/md_theme_light_onSecondary" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student's Plaza"
+            android:textColor="@color/md_theme_light_onSecondary" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/outline_star_outline_24"
+            app:tint="@color/md_theme_light_onSecondary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:text="4.8"
+            android:textColor="@color/md_theme_light_onSecondary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="100+ ratings"
+            android:textColor="@color/md_theme_light_onSecondary" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-25dp"
+        android:layout_marginBottom="-15dp"
+        app:cardBackgroundColor="@color/md_theme_light_background"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView10"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/imgStallStallInfo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Food" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reviews" />
+
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutFoodReviews"
+                android:layout_marginBottom="-15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/cardView6"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="310dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:cardCornerRadius="16dp"-->
+    <!--        android:layout_marginTop="-15dp"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent">-->
+
+    <!--            <ImageButton-->
+    <!--                android:id="@+id/imgbtnBackStallsInfo"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginStart="20dp"-->
+    <!--                android:layout_marginTop="35dp"-->
+    <!--                android:background="@null"-->
+    <!--                android:src="@drawable/baseline_arrow_back_24"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                app:tint="@color/md_theme_light_primary" />-->
+
+    <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                android:id="@+id/linearLayout"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginStart="25dp"-->
+    <!--                android:layout_marginTop="75dp"-->
+    <!--                android:layout_marginEnd="25dp"-->
+    <!--                android:gravity="center"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                <androidx.cardview.widget.CardView-->
+    <!--                    android:id="@+id/cardView9"-->
+    <!--                    android:layout_width="125dp"-->
+    <!--                    android:layout_height="125dp"-->
+    <!--                    app:cardBackgroundColor="@color/md_theme_light_primary"-->
+    <!--                    app:cardCornerRadius="10dp"-->
+    <!--                    app:cardElevation="8dp"-->
+    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent"-->
+    <!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:orientation="horizontal"-->
+    <!--                        android:padding="5dp">-->
+
+    <!--                        <androidx.cardview.widget.CardView-->
+    <!--                            android:layout_width="115dp"-->
+    <!--                            android:layout_height="115dp"-->
+    <!--                            app:cardCornerRadius="10dp"-->
+    <!--                            app:cardElevation="0dp">-->
+
+    <!--                            <LinearLayout-->
+    <!--                                android:layout_width="match_parent"-->
+    <!--                                android:layout_height="match_parent"-->
+    <!--                                android:gravity="center"-->
+    <!--                                android:orientation="horizontal">-->
+
+    <!--                                <ImageView-->
+    <!--                                    android:layout_width="match_parent"-->
+    <!--                                    android:layout_height="match_parent"-->
+    <!--                                    android:src="@drawable/stall_number_1" />-->
+    <!--                            </LinearLayout>-->
+    <!--                        </androidx.cardview.widget.CardView>-->
+    <!--                    </LinearLayout>-->
+    <!--                </androidx.cardview.widget.CardView>-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textView15"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginStart="10dp"-->
+    <!--                        android:text="Stall ni Adele Blue"-->
+    <!--                        android:textSize="24sp"-->
+    <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                        app:layout_constraintStart_toEndOf="@+id/cardView9"-->
+    <!--                        app:layout_constraintTop_toTopOf="@+id/cardView9"-->
+    <!--                        app:layout_constraintVertical_bias=".2" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="0dp"-->
+    <!--                        android:layout_marginTop="3dp"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:maxLines="4"-->
+    <!--                        android:maxLength="109"-->
+    <!--                        android:text="@string/lorem_ipsum"-->
+    <!--                        app:layout_constraintEnd_toEndOf="@+id/textView15"-->
+    <!--                        app:layout_constraintStart_toStartOf="@+id/textView15"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@+id/textView15" />-->
+    <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:id="@+id/linearLayout3"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:gravity="center|bottom"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="@+id/linearLayout"-->
+    <!--                app:layout_constraintTop_toBottomOf="@id/linearLayout"-->
+    <!--                app:layout_constraintVertical_bias=".55">-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="20dp"-->
+    <!--                    android:layout_height="20dp"-->
+    <!--                    android:src="@drawable/outline_location_on_24"-->
+    <!--                    app:tint="@color/md_theme_light_primary" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_marginStart="2dp"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Student's Plaza" />-->
+    <!--            </LinearLayout>-->
+
+
+    <!--                <LinearLayout-->
+    <!--                    android:id="@+id/linearLayout4"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginTop="3dp"-->
+    <!--                    android:gravity="center|bottom"-->
+    <!--                    android:orientation="horizontal"-->
+    <!--                    app:layout_constraintStart_toStartOf="@+id/linearLayout3"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/linearLayout3">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:layout_width="20dp"-->
+    <!--                        app:tint="@color/md_theme_light_primary"-->
+    <!--                        android:layout_height="20dp"-->
+    <!--                        android:src="@drawable/outline_star_outline_24" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginStart="2dp"-->
+    <!--                        android:text="4.8"-->
+    <!--                        android:textStyle="bold" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginStart="5dp"-->
+    <!--                        android:text="100+ ratings" />-->
+
+    <!--                </LinearLayout>-->
+
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="See reviews"-->
+    <!--                android:textStyle="bold"-->
+    <!--                android:textColor="@color/md_theme_light_primary"-->
+    <!--                app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"-->
+    <!--                app:layout_constraintEnd_toEndOf="@+id/linearLayout"-->
+    <!--                app:layout_constraintTop_toTopOf="@+id/linearLayout4" />-->
+
+
+    <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--    </androidx.cardview.widget.CardView>-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView4"-->
+    <!--        android:layout_width="25dp"-->
+    <!--        android:layout_height="25dp"-->
+    <!--        android:layout_marginStart="38dp"-->
+    <!--        android:layout_marginTop="25dp"-->
+    <!--        app:tint="@color/md_theme_light_primary"-->
+    <!--        android:src="@drawable/cloche_best_selling"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/cardView6" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:text="Food"-->
+    <!--        android:textSize="18sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView4"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/imageView4"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView4" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView10"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:text="Most ordered"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView4"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/textView10"-->
+    <!--        android:layout_marginStart="10dp"-->
+    <!--        android:layout_marginEnd="10dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
