@@ -38,7 +38,7 @@
             android:id="@+id/etSearchSignUp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:maxLength="255"
             android:textSize="14sp"
             app:errorIconDrawable="@null" />

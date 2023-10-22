@@ -31,6 +31,7 @@ class SellerFoodProductsFragment : Fragment() {
         binding.rvSellerFoodProduct.adapter = adapter
         sharedViewModel = ViewModelProvider(requireActivity())[SharedViewModel::class.java]
         binding.fab.setOnClickListener {
+            sharedViewModel.selectedProduct.value = null
             requireActivity().supportFragmentManager.beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .add(R.id.frameLayoutSeller, AddFoodProductDialogFragment())
@@ -39,6 +40,7 @@ class SellerFoodProductsFragment : Fragment() {
         }
 
         binding.btnSearch.setOnClickListener {
+            sharedViewModel.selectedProduct.value = null
             val query = binding.etSearchSignUp.text.toString().trim().lowercase()
 
             // Check if the query is not empty
