@@ -1,187 +1,285 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--main parent-->
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!--main parent-->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nestedScroll"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-<!--widgets-->
 
-    <ImageButton
-        android:layout_width="310dp"
-        android:layout_height="25dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="#FFFFFF" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <!--widgets-->
+
 
     <TextView
         android:id="@+id/categories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="70dp"
-        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="5dp"
         android:text="Categories"
         android:textColor="#32620e"
-        android:textSize="20sp" />
-
-
-    <ImageButton
-        android:id="@+id/search"
-        android:layout_width="18dp"
-        android:layout_height="17.5dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="15dp"
-        android:scaleType="fitCenter"
-        android:background="@null"
-        app:srcCompat="@drawable/loupe" />
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/view_more"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="80dp"
+        android:layout_alignTop="@+id/categories"
+        android:layout_alignBottom="@+id/categories"
+        android:layout_marginEnd="5dp"
+        android:layout_toStartOf="@+id/arrow"
         android:text="View More"
         android:textColor="#32620e"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/arrow"
+        app:layout_constraintEnd_toStartOf="@+id/arrow"
+        app:layout_constraintTop_toTopOf="@+id/arrow" />
 
     <ImageView
         android:id="@+id/arrow"
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_alignTop="@+id/view_more"
-        android:layout_alignBottom="@+id/view_more"
-        android:layout_toEndOf="@+id/view_more"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/categories"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/categories"
         app:srcCompat="@drawable/baseline_arrow_forward_24" />
 
-<!--LinearLayout for categories-->
-    <LinearLayout
+    <!--    LinearLayout for categories-->
+
+    <!--    <HorizontalScrollView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"/>-->
+
+    <HorizontalScrollView
+        android:id="@+id/scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categories">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!--card-view for burger-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvBurger"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/burger"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/burger" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Burger"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/cvBurger"
+                app:layout_constraintStart_toStartOf="@+id/cvBurger"
+                app:layout_constraintTop_toBottomOf="@+id/cvBurger" />
+            <!--card-view for noodles-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvNoodles"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cvBurger"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/noodles"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/noodles_png_image_sqaure" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Noodles"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/cvNoodles"
+                app:layout_constraintStart_toStartOf="@+id/cvNoodles"
+                app:layout_constraintTop_toBottomOf="@+id/cvNoodles" />
+            <!--card-view for buko juice-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvBokojos"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cvNoodles"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/bokojos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:padding="-10dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/bokojos" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drinks"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/cvBokojos"
+                app:layout_constraintStart_toStartOf="@+id/cvBokojos"
+                app:layout_constraintTop_toBottomOf="@+id/cvBokojos" />
+
+            <!--card-view for fries-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvPrays"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cvBokojos"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/prays"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:paddingBottom="10dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/prays" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fries"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/cvPrays"
+                app:layout_constraintStart_toStartOf="@+id/cvPrays"
+                app:layout_constraintTop_toBottomOf="@+id/cvPrays" />
+            <!--card-view for turon-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvTuron"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="20dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cvPrays"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/turon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/turon" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Snacks"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/cvTuron"
+                app:layout_constraintStart_toStartOf="@+id/cvTuron"
+                app:layout_constraintTop_toBottomOf="@+id/cvTuron" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
+    <!--end of LinearLayout for categories-->
+
+    <!--stalls-->
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Stalls"
+            android:textColor="#32620e"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/categories"
+            app:layout_constraintTop_toBottomOf="@+id/scroll" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvStalls"
         android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/categories"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="0dp"
-        android:orientation="horizontal">
-
-        <!--card-view for burger-->
-        <androidx.cardview.widget.CardView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="19dp"
-            app:cardCornerRadius="5dp">
-
-            <ImageButton
-                android:id="@+id/burger"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/burger" />
-
-        </androidx.cardview.widget.CardView>
-
-        <!--card-view for noodles-->
-        <androidx.cardview.widget.CardView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="25dp"
-            app:cardCornerRadius="5dp">
-
-            <ImageButton
-                android:id="@+id/noodles"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/noodles_png_image_sqaure" />
-
-        </androidx.cardview.widget.CardView>
-
-        <!--card-view for buko juice-->
-        <androidx.cardview.widget.CardView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="25dp"
-            app:cardCornerRadius="5dp">
-
-            <ImageButton
-                android:id="@+id/bokojos"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/bokojos" />
-
-        </androidx.cardview.widget.CardView>
-
-        <!--card-view for fries-->
-        <androidx.cardview.widget.CardView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="25dp"
-            app:cardCornerRadius="5dp">
-
-            <ImageButton
-                android:id="@+id/prays"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:paddingBottom="10dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/prays" />
-
-        </androidx.cardview.widget.CardView>
-
-        <!--card-view for turon-->
-        <androidx.cardview.widget.CardView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="25dp"
-            app:cardCornerRadius="5dp">
-
-            <ImageButton
-                android:id="@+id/turon"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:paddingTop="5dp"
-                android:paddingBottom="8dp"
-                android:scaleType="centerInside"
-                app:srcCompat="@drawable/turon" />
-
-        </androidx.cardview.widget.CardView>
-
-
-    </LinearLayout>
-<!--end of LinearLayout for categories-->
-
-<!--stalls-->
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="210dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Stalls"
+        android:text="Foods"
         android:textColor="#32620e"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textView18"
+        app:layout_constraintTop_toBottomOf="@+id/rvStalls" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="450dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Breakfast Meals"
-        android:textColor="#32620e"
-        android:textSize="20sp" />
-
-</RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFoodHome"
+        android:layout_width="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        android:layout_marginTop="15dp"
+        android:layout_height="520dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
