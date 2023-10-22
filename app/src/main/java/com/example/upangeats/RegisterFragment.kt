@@ -18,7 +18,7 @@ class RegisterFragment : Fragment() {
     ): View {
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
 
-        binding.imgbtnBackSignUp.setOnClickListener {
+        binding.imgbtnBack.setOnClickListener {
             findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
 
@@ -27,6 +27,10 @@ class RegisterFragment : Fragment() {
         }
 
         return binding.root
+
+
     }
 
+
 }
+
