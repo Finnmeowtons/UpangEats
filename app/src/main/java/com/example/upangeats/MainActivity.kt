@@ -1,5 +1,6 @@
 package com.example.upangeats
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,12 +24,18 @@ import com.example.upangeats.databinding.ActivityMainBinding
 import com.example.upangeats.viewModel.BottomNavViewModel
 import com.example.upangeats.viewModel.SharedViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var binding: ActivityMainBinding
     private lateinit var sharedViewModel: SharedViewModel
     private lateinit var bottomNavViewModel: BottomNavViewModel
+    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
+    private var currentUser = auth.currentUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -42,6 +49,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         //Setting the toolbar as a top app bar
         setSupportActionBar(binding.appBarMain.toolbar)
 
+        //Check if the user is signed in. If the user is signed, it will show log out
+        //If the user is not signed in, Log in
+        if (currentUser != null) {
+            binding.sideNavDrawer.menu.findItem(R.id.logout_item).title = "Log out"
+        }
 
 
         //Initializing Side Navigation Drawer
@@ -88,7 +100,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
-
     }
 
     //Managing the navigation states using view model
@@ -118,6 +129,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     binding.appBarMain.toolbar2.title = "Settings"
                     visibleToolbarTwo()
                 }
+
             }
         }
     }
@@ -172,6 +184,29 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 binding.appBarMain.toolbar2.title = "Settings"
                 visibleToolbarTwo()
 
+
+            }
+
+            R.id.logout_item -> {
+                currentUser = auth.currentUser
+                if (currentUser != null) {
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle("Log out?")
+                        .setMessage("Are you sure you want to log out?")
+                        .setNegativeButton("Cancel") { dialog, which ->
+
+                        }
+                        .setPositiveButton("Log out") { dialog, which ->
+
+                            binding.sideNavDrawer.menu.findItem(R.id.logout_item).title = "Log in"
+                            auth.signOut()
+
+
+                        }
+                        .show()
+                } else {
+                    startActivity(Intent(this, LogInAndRegisterActivity::class.java))
+                }
 
             }
         }
