@@ -11,6 +11,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
+import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.add
 import androidx.lifecycle.ViewModelProvider
@@ -21,6 +22,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.upangeats.databinding.ActivityMainBinding
 import com.example.upangeats.viewModel.BottomNavViewModel
 import com.example.upangeats.viewModel.SharedViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -41,6 +43,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(binding.appBarMain.toolbar)
 
 
+
         //Initializing Side Navigation Drawer
         binding.sideNavDrawer.setNavigationItemSelectedListener(this)
         val toggle = ActionBarDrawerToggle(
@@ -57,71 +60,74 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportFragmentManager
             .beginTransaction()
             .setCustomAnimations(
-                androidx.transition.R.anim.abc_fade_in,
-                androidx.transition.R.anim.abc_fade_out
+                R.anim.enter_anim,
+                R.anim.exit_anim
             )
             .replace(R.id.navFragment, HomeFragment())
             .commit()
         //Setting the selected item in side nav
         binding.sideNavDrawer.setCheckedItem(R.id.home_item)
-
-
+        //Making the back button on toolbar2 go back
         binding.appBarMain.toolbar2.setNavigationOnClickListener {
             onBackPressedMethod()
         }
 
 
-
-
-
         //Managing the navigation states using view model
         sharedViewModel = ViewModelProvider(this)[SharedViewModel::class.java]
         bottomNavViewModel = ViewModelProvider(this)[BottomNavViewModel::class.java]
+        sideNavState()
+
+        sharedViewModel.currentFragmentTag.observe(this) { activeFragment ->
+            when (activeFragment) {
+                "StallsInfo" -> {
+                    Log.e("MyTag", "cliped")
+                }
+
+            }
+        }
+
+
+
+    }
+
+    //Managing the navigation states using view model
+    private fun sideNavState() {
         sharedViewModel.sideNavDrawerSelectedState.observe(this) { selectedItem ->
             when (selectedItem) {
-                2131362076 -> {
+                R.id.home_item -> {
                     binding.sideNavDrawer.setCheckedItem(R.id.home_item)
-                    title = "Home"
+                    binding.appBarMain.toolbar2.title = "Home"
                     visibleToolbarOne()
                 }
 
-                2131362249 -> {
-                    binding.sideNavDrawer.setCheckedItem(R.id.profile_item)
-                    binding.appBarMain.toolbar.title = "Profile"
-                    visibleToolbarTwo()
-                }
-
-                2131362041 -> {
+                R.id.favorite_item -> {
                     binding.sideNavDrawer.setCheckedItem(R.id.favorite_item)
-                    binding.appBarMain.toolbar.title = "Favorite"
+                    binding.appBarMain.toolbar2.title = "Favorite"
                     visibleToolbarTwo()
                 }
 
-                2131362071 -> {
+                R.id.history_item -> {
                     binding.sideNavDrawer.setCheckedItem(R.id.history_item)
                     binding.appBarMain.toolbar2.title = "History"
                     visibleToolbarTwo()
                 }
 
-                2131362296 -> {
+                R.id.settings_item -> {
                     binding.sideNavDrawer.setCheckedItem(R.id.settings_item)
                     binding.appBarMain.toolbar2.title = "Settings"
                     visibleToolbarTwo()
                 }
             }
         }
-
-
     }
 
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
             .setCustomAnimations(
-                R.anim.slide_in_right,
-                R.anim.slide_out_left,
-                R.anim.slide_in_right,
-                R.anim.slide_out_left
+                R.anim.enter_anim,
+                R.anim.exit_anim
             )
             .replace(R.id.navFragment, fragment)
             .commit()
@@ -131,28 +137,42 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.home_item -> {
-                sharedViewModel.sideNavDrawerSelectedState.value = item.itemId
-                replaceFragment(HomeFragment())
-            }
 
-            R.id.profile_item -> {
-                sharedViewModel.sideNavDrawerSelectedState.value = item.itemId
-                replaceFragment(ProfileFragment())
+                if (sharedViewModel.sideNavDrawerSelectedState.value == R.id.home_item) {
+                    sharedViewModel.sideNavDrawerSelectedState.postValue(item.itemId)
+                    binding.appBarMain.toolbar2.title = "Home"
+                    Log.e("MyTag", binding.sideNavDrawer.checkedItem?.itemId.toString())
+                    replaceFragment(HomeFragment())
+                    visibleToolbarOne()
+                }
+
             }
 
             R.id.history_item -> {
                 sharedViewModel.sideNavDrawerSelectedState.value = item.itemId
-//                replaceFragment(HomeHomeFragment())
+                replaceFragment(HistoryFragment())
+                binding.appBarMain.toolbar2.title = "History"
+                visibleToolbarTwo()
+
+
             }
 
             R.id.favorite_item -> {
                 sharedViewModel.sideNavDrawerSelectedState.value = item.itemId
                 replaceFragment(FavoritesFragment())
+                binding.appBarMain.toolbar2.title = "Favorite"
+                visibleToolbarTwo()
+
+
             }
 
             R.id.settings_item -> {
                 sharedViewModel.sideNavDrawerSelectedState.value = item.itemId
                 replaceFragment(SettingsFragment())
+                binding.appBarMain.toolbar2.title = "Settings"
+                visibleToolbarTwo()
+
+
             }
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -181,42 +201,72 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             onBackPressedMethod()
         }
     }
+
     private fun onBackPressedMethod() {
-        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) { //If nakabukas side nav drawer
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         } else {
-            supportFragmentManager
-                .beginTransaction()
-                .setCustomAnimations(
-                    R.anim.slide_in_left,
-                    R.anim.slide_out_right,
-                    R.anim.slide_in_left,
-                    R.anim.slide_out_right
-                )
-                .replace(R.id.navFragment, HomeFragment())
-                .commit()
-            when (bottomNavViewModel.selectedItemId.value) {
-                2131361916 -> {
-                    binding.appBarMain.toolbar.title = "Chat"
-                }
-
-                2131361918 -> {
-                    binding.appBarMain.toolbar.title = "Stalls"
+            if (supportFragmentManager.backStackEntryCount > 0) { //If may nakapatong
+                when (sharedViewModel.currentFragmentTag.value) {
+                    "StallsInfo" -> {
+                        Log.e("MyTag", "clipeddd")
+                    }
 
                 }
+                supportFragmentManager.popBackStack()
 
-                2131361919 -> {
-                    binding.appBarMain.toolbar.title = "Tray"
 
+            } else if (binding.sideNavDrawer.checkedItem?.itemId != R.id.home_item) { //If hindi selected ang home item
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(
+                        R.anim.nav_enter_anim,
+                        R.anim.nav_exit_anim
+                    )
+                    .replace(R.id.navFragment, HomeFragment())
+                    .commit()
+                when (bottomNavViewModel.selectedItemId.value) {
+                    R.id.bottomNavChat -> {
+                        binding.appBarMain.toolbar.title = "Chat"
+                    }
+
+                    R.id.bottomNavTray -> {
+                        binding.appBarMain.toolbar.title = "Tray"
+
+                    }
+
+                    R.id.bottomNavStalls -> {
+                        binding.appBarMain.toolbar.title = "Stalls"
+
+                    }
+
+                    else -> {
+                        binding.appBarMain.toolbar.title = "Home"
+
+                    }
                 }
 
-                else -> {
-                    binding.appBarMain.toolbar.title = "Home"
 
-                }
+            } else if (
+                binding.sideNavDrawer.checkedItem?.itemId == R.id.home_item &&
+                bottomNavViewModel.selectedItemId.value == R.id.bottomNavChat ||
+                bottomNavViewModel.selectedItemId.value == R.id.bottomNavTray ||
+                bottomNavViewModel.selectedItemId.value == R.id.bottomNavStalls
+            ) {
+                val bottomNavBar = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+                bottomNavViewModel.selectedItemId.value = R.id.bottomNavHome
+                binding.appBarMain.toolbar.title = "Home"
+                bottomNavBar.selectedItemId = R.id.bottomNavHome
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(
+                        R.anim.nav_enter_anim,
+                        R.anim.nav_exit_anim
+                    )
+                    .replace(R.id.frameLayout, HomeHomeFragment())
+                    .commit()
             }
-
-            sharedViewModel.sideNavDrawerSelectedState.value = 2131362076
+            sharedViewModel.sideNavDrawerSelectedState.postValue(R.id.home_item)
             binding.sideNavDrawer.setCheckedItem(R.id.home_item)
         }
     }

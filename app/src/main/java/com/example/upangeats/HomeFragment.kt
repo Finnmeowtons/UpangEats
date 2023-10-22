@@ -27,21 +27,26 @@ class HomeFragment : Fragment() {
 
         bottomNavViewModel = ViewModelProvider(requireActivity())[BottomNavViewModel::class.java]
         // Inflate the layout for this fragment
-        if (bottomNavViewModel.selectedItemId.value == 2131361916) {
-            replaceFragment(ChatFragment())
-            binding.bottomNavigationView.selectedItemId = R.id.bottomNavChat
+        when (bottomNavViewModel.selectedItemId.value) {
+            R.id.bottomNavChat -> {
+                replaceFragment(ChatFragment())
+                binding.bottomNavigationView.selectedItemId = R.id.bottomNavChat
+            }
 
-        } else if (bottomNavViewModel.selectedItemId.value == 2131361918) {
-            replaceFragment(StallsFragment())
-            binding.bottomNavigationView.selectedItemId = R.id.bottomNavStalls
+            R.id.bottomNavStalls -> {
+                replaceFragment(StallsFragment())
+                binding.bottomNavigationView.selectedItemId = R.id.bottomNavStalls
+            }
 
-        } else if (bottomNavViewModel.selectedItemId.value == 2131361919) {
-            replaceFragment(OrderTrayFragment())
-            binding.bottomNavigationView.selectedItemId = R.id.bottomNavTray
+            R.id.bottomNavTray -> {
+                replaceFragment(OrderTrayFragment())
+                binding.bottomNavigationView.selectedItemId = R.id.bottomNavTray
+            }
 
-        } else {
-            replaceFragment(HomeHomeFragment())
-            binding.bottomNavigationView.selectedItemId = R.id.bottomNavHome
+            else -> {
+                replaceFragment(HomeHomeFragment())
+                binding.bottomNavigationView.selectedItemId = R.id.bottomNavHome
+            }
         }
 
         val toolbar2 = activity?.findViewById<MaterialToolbar>(R.id.toolbar2)
@@ -52,7 +57,7 @@ class HomeFragment : Fragment() {
         toolbar2?.visibility = View.GONE
 
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
-            bottomNavViewModel.selectedItemId.value = item.itemId
+            bottomNavViewModel.selectedItemId.postValue(item.itemId)
             Log.e("tag", "${item.itemId}")
             when (item.itemId) {
                 R.id.bottomNavHome -> {
@@ -97,6 +102,10 @@ class HomeFragment : Fragment() {
     private fun replaceFragment(fragment: Fragment) {
         parentFragmentManager
             .beginTransaction()
+            .setCustomAnimations(
+                R.anim.nav_enter_anim,
+                R.anim.nav_exit_anim
+            )
             .replace(R.id.frameLayout, fragment)
             .commit()
     }
