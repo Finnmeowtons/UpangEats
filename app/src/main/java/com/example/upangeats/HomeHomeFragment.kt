@@ -17,10 +17,6 @@ class HomeHomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeHomeBinding.inflate(inflater, container, false)
 
-        binding.menu.setOnClickListener {
-
-        }
-
         return binding.root
     }
 }
