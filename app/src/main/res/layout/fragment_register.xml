@@ -55,6 +55,7 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
@@ -64,26 +65,26 @@
                         app:endIconMode="clear_text"
                         app:endIconTint="#77000000">
 
-<!--                        <com.google.android.material.textfield.TextInputEditText-->
-<!--                            android:id="@+id/etEmailSignUp"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="match_parent"-->
-<!--                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._-1234567890@"-->
-<!--                            android:inputType="text"-->
-<!--                            android:maxLines="1"-->
-<!--                            android:maxLength="32"-->
-<!--                            android:textSize="11sp" />-->
+                        <!--                        <com.google.android.material.textfield.TextInputEditText-->
+                        <!--                            android:id="@+id/etEmailSignUp"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="match_parent"-->
+                        <!--                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._-1234567890@"-->
+                        <!--                            android:inputType="text"-->
+                        <!--                            android:maxLines="1"-->
+                        <!--                            android:maxLength="32"-->
+                        <!--                            android:textSize="11sp" />-->
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:maxLength="32"
                             android:id="@+id/etEmailSignUp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:textSize="14sp"
-                            android:singleLine="true"
                             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._-1234567890@"
                             android:inputType="textEmailAddress"
-                            android:maxLines="1" />
+                            android:maxLength="32"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
