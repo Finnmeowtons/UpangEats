@@ -24,6 +24,9 @@ class ForgotPasswordFragment : Fragment() {
         }
 
         binding.btnSendForgotPassword.setOnClickListener {
+
+
+
             findNavController().navigate(R.id.action_forgotPasswordFragment_to_setNewPasswordFragment)
         }
         // Inflate the layout for this fragment

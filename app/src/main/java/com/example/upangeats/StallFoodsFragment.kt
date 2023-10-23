@@ -20,7 +20,7 @@ class StallFoodsFragment : Fragment() {
     ): View {
         binding = FragmentStallFoodsBinding.inflate(inflater, container, false)
 
-        binding.rvStallFoods.adapter = FoodProductAdapter()
+//        binding.rvStallFoods.adapter = FoodProductAdapter()
 
 
         return binding.root
