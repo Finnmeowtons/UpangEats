@@ -1,5 +1,6 @@
 package com.example.upangeats
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
@@ -40,6 +41,8 @@ class SellerCenterActivity : AppCompatActivity() {
             supportFragmentManager.popBackStack()
         } else {
             sharedViewModel.selectedProduct.value = null
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 }

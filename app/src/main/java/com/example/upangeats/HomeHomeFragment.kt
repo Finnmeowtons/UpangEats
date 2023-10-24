@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.NestedScrollView
+import com.example.upangeats.adapter.FoodInfoAdapter
 import com.example.upangeats.adapter.FoodProductAdapter
 import com.example.upangeats.adapter.StallsAdapter
 import com.example.upangeats.adapter.StallsHomeAdapter
@@ -24,7 +25,7 @@ class HomeHomeFragment : Fragment() {
 
         binding.rvStalls.adapter = StallsHomeAdapter()
 
-//        binding.rvFoodHome.adapter = FoodProductAdapter()
+        binding.rvFoodHome.adapter = FoodInfoAdapter()
 
         binding.viewMore.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()

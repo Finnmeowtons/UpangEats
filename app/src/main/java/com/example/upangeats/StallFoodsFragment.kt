@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.upangeats.adapter.FavoriteRecyclerViewAdapter
+import com.example.upangeats.adapter.FoodInfoAdapter
 import com.example.upangeats.adapter.FoodProductAdapter
 import com.example.upangeats.databinding.FragmentStallFoodsBinding
 
@@ -20,7 +21,7 @@ class StallFoodsFragment : Fragment() {
     ): View {
         binding = FragmentStallFoodsBinding.inflate(inflater, container, false)
 
-//        binding.rvStallFoods.adapter = FoodProductAdapter()
+        binding.rvStallFoods.adapter = FoodInfoAdapter()
 
 
         return binding.root
